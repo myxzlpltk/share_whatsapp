@@ -147,11 +147,7 @@ class ShareWhatsappPlugin : FlutterPlugin, MethodCallHandler {
                     if (file != null) {
                         type = contentType ?: "*/*"
 
-                        var uriFile = File(file)
-                        if (fileIsInShareCache(uriFile)) {
-                            // If file is saved in '.../caches/share_whatsapp' it will be erased by 'clearShareCacheFolder()'
-                            throw IOException("Shared file can not be located in '${shareCacheFolder.canonicalPath}'")
-                        }
+                        val uriFile = File(file)
                         uriFile = copyToShareCacheFolder(uriFile)
                         Log.d(TAG, "Cache file path : ${uriFile.canonicalPath}")
 
