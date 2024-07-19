@@ -148,7 +148,6 @@ class ShareWhatsappPlugin : FlutterPlugin, MethodCallHandler {
                         type = contentType ?: "*/*"
 
                         val uriFile = File(file)
-                        uriFile = copyToShareCacheFolder(uriFile)
                         Log.d(TAG, "Cache file path : ${uriFile.canonicalPath}")
 
                         val fileUri =
